@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+<h1>Results</h1>
+<ul>
+    {% for vote in all_votes %}
+        <li>{{ vote.country_name }}: {{ vote.votes }} votes</li>
+    {% endfor %}
+</ul>
+{% endblock %}

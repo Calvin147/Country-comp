@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    {% if user.is_authenticated %}
+        <div class="content-block">
+            <div class="germany-content">
+            <h1>Germany</h1>
+        <p> 
+        Germany, renowned for its rich history, stunning landscapes, and thriving economy, stands as a welcoming destination for those considering immigration. Boasting a perfect blend of old-world charm and modern innovation, Germany offers a high quality of life, robust social services, and a strong commitment to education and healthcare. Its central location within Europe makes it an ideal hub for travel and exploration, allowing residents to easily experience diverse cultures and traditions.
+
+        One compelling reason to immigrate to Germany is its robust economy. The country is an industrial powerhouse and a global leader in technology and innovation. With a low unemployment rate and a strong job market, skilled professionals from various fields have ample opportunities to excel in their careers. Additionally, Germany's commitment to environmental sustainability and green technologies fosters a forward-thinking atmosphere that appeals to those passionate about shaping a better future.
+        
+        Moreover, Germany's emphasis on education and research is a significant draw for individuals and families seeking intellectual growth and development. The country is home to numerous world-class universities and research institutions, offering a wide array of academic programs. The combination of tuition-free or low-cost education for many students and a diverse range of scholarship opportunities make Germany an attractive choice for those looking to advance their knowledge and skills. Overall, the country's blend of economic stability, cultural diversity, and educational excellence makes it a compelling destination for anyone contemplating a new chapter through immigration. 
+        </p>
+        <div class="vote-button">
+            <form action="{% url 'results_page:vote_for_country' 'Germany' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Vote</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+        <div class="content-block">
+            <div class="netherlands-content">
+            <h1>Netherlands</h1>
+        <p> The Netherlands, often referred to as a land of picturesque canals, windmills, and tulip fields, offers a multitude of reasons for individuals to consider immigrating. One of the standout features is the Dutch commitment to work-life balance and high quality of life. With a well-developed infrastructure, efficient public transportation, and a strong social safety net, the Netherlands provides a conducive environment for both personal and professional growth. The Dutch healthcare and education systems are renowned for their excellence, ensuring that residents have access to top-notch services and educational opportunities.
+
+            Another compelling factor is the Netherlands' open and tolerant society. The country prides itself on its inclusivity and progressive values, making it an attractive destination for individuals from all walks of life. The Dutch society's acceptance of diversity and emphasis on individual rights create an environment where people can freely express themselves and feel a sense of belonging. The country's rich cultural scene, bustling cities, and vibrant arts and entertainment options further contribute to an enriching and fulfilling lifestyle.
+            
+            Furthermore, the Netherlands' strategic location in Europe makes it an ideal base for exploration and travel. Its efficient transportation network allows easy access to neighboring countries, enabling residents to experience various cultures and traditions within a short distance. The Dutch commitment to sustainable living and eco-friendly initiatives also aligns with the values of those seeking to make a positive impact on the environment. Overall, the Netherlands' blend of progressive values, quality of life, and opportunities for exploration make it an appealing choice for individuals and families considering immigration.
+        </p>
+            <div class="vote-button">
+                <form action="{% url 'results_page:vote_for_country' 'Netherlands' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Vote</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
+</div>
+{% endblock %}
