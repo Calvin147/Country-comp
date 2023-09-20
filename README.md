@@ -15,20 +15,16 @@ Before you begin, ensure you have the following prerequisites installed:
 
 Clone the repository to your local machine:
 
-```bash
+
 git clone <https://calvin147.github.io/Country_comp>
 
 2. Create a Virtual Environment (Optional, but Recommended)
 It's a good practice to use a virtual environment to isolate dependencies. Create and activate a virtual environment:
-bash
-Copy code
 python -m venv venv
 source venv/bin/activate  # On Windows, use "venv\Scripts\activate"
 
 3. Install Dependencies
 Install Python dependencies from the requirements.txt file:
-bash
-Copy code
 pip install -r requirements.txt
 
 4. Configure Django Settings
@@ -36,14 +32,10 @@ Ensure that your Django settings (e.g., country_comp/settings.py) are correctly 
 
 5. Apply Migrations (if applicable)
 If your Django project includes database models, apply migrations:
-bash
-Copy code
 python manage.py migrate
 
 6. Start the Development Server
 Run the Django development server:
-bash
-Copy code
 python manage.py runserver
 The application should now be accessible at http://127.0.0.1:8000/ in your web browser.
 
@@ -51,14 +43,10 @@ Running with Docker
 1. Build the Docker Image
 Build the Docker image from the project directory (where your Dockerfile is located):
 
-bash
-Copy code
 docker build -t my-django-app .
 2. Run the Docker Container
 Run the Docker container, exposing port 8000 (adjust as needed):
 
-bash
-Copy code
 docker run -p 8000:8000 my-django-app
 The application should now be accessible at http://127.0.0.1:8000/ in your web browser.
 
@@ -67,9 +55,3 @@ Access the Django application in your web browser by navigating to http://127.0.
 Follow the application's functionality to interact with it (e.g., voting for countries).
 Contributing
 If you'd like to contribute to this project, please follow our Contribution Guidelines.
-
-License
-This project is licensed under the MIT License.
-
-Acknowledgments
-Acknowledge any external libraries, frameworks, or resources used in your project.
